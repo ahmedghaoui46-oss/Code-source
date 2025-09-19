@@ -1,15 +1,16 @@
-function OccurenceNum() {
-    let list=["c1","c2","c1","c3","c4","c4","c1","c3","c1"];
+// Tableau de compétences
+const competences = ["C1", "C3", "C2", "C1", "C8", "C1", "C2", "C5", "C1"];
 
-    let nameC=prompt("enter the c :");
-    let counter=0;
-    for (let i = 0; i < list.length; i++) {
-        if (nameC==list[i]) {
-            counter++
-      
-        
-    }
-    }
-    console.log("    the number of     "+nameC+" is "+ counter)
+// Code choisi
+const codeRecherche = "C1";
+
+// Calcul du nombre d’occurrences
+let compteur = 0;
+
+for (let i = 0; i < competences.length; i++) {
+  if (competences[i] === codeRecherche) {
+    compteur++;
+  }
 }
-OccurenceNum();
+
+console.log(`Le code ${codeRecherche} apparaît ${compteur} fois.`);
