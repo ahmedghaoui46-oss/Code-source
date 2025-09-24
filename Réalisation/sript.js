@@ -7,10 +7,8 @@ const qr = [
   { name: "Node.js et AP", code: "C6" },
   { name: "Frameworks JS", code: "C7" },
   { name: "Projet fil rouge", code: "C8" }
- 
-];
-
-let score = 0;
+]
+score = 0;
 let counter = 0;
 
 alert("Bienvenue ! Réponds avec le bon code (C1..C8). Clique Annuler pour quitter.");
