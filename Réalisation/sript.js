@@ -1,44 +1,36 @@
-let competences = {
-    "HTML et CSS": "C1",
-    "JavaScript de base": "C2",
-    "Programmation orientée objet": "C3",
-    "Git et GitHub": "C4",
-    "Bases de données SQL": "C5",
-    "Node.js et API": "C6",
-    "Frameworks JS": "C7",
-    "Projet fil rouge": "C8"
-};
+const qr = [
+  { name: "HTML et CSS", code: "C1" },
+  { name: "JavaScript de base", code: "C2" },
+  { name: "Programmation orientée objet", code: "C3" },
+  { name: "Git et GitHub", code: "C4" },
+  { name: "Bases de données SQL", code: "C5" },
+  { name: "Node.js et AP", code: "C6" },
+  { name: "Frameworks JS", code: "C7" },
+  { name: "Projet fil rouge", code: "C8" }
+ 
+];
 
 let score = 0;
-let totalQuestions = 0;
+let counter = 0;
 
-// Fonction pour obtenir une autoformation au hasard
-function getRandomFormation() {
-    let keys = Object.keys(competences);
-    let randomIndex = Math.floor(Math.random() * keys.length);
-    return keys[randomIndex];
-}
+alert("Bienvenue ! Réponds avec le bon code (C1..C8). Clique Annuler pour quitter.");
 
-// Boucle de jeu
-while (true) {
-    let formation = getRandomFormation();
-    let reponse = prompt(`Quelle est la compétence associée à : ${formation} ? (ex: C1, C2...)`);
+for (let i = 0; i < qr.length; i++) {
+  const q = qr[i];
+  const reponse = prompt("Quel est le code pour : " + q.name + " ?");
 
-    if (reponse === null) { 
-        console.log("🎮 Jeu terminé.");
-        console.log(`✅ Score final : ${score}/${totalQuestions}`);
-        break; 
-    }
+  if (reponse === null) {
+    console.log("Fin du jeu ! Score final : " + score + " / " + counter);
+    break;
+  }
 
-    totalQuestions++;
+  counter++;
 
-    if (reponse.toUpperCase() === competences[formation]) {
-        console.log("✅ Bonne réponse !");
-        score++;
-    } else {
-        console.log(`❌ Mauvaise réponse. La bonne compétence est : ${competences[formation]}`);
-    }
-
-    console.log(`📊 Score actuel : ${score}/${totalQuestions}`);
-    console.log("------------------------------------");
-}
+  if (reponse.toUpperCase() === q.code.toUpperCase()) {
+    score++;
+    console.log("✅ Correct ! " + q.name + " → " + q.code);
+  } else {
+    console.log("❌ Faux ! La bonne réponse était : " + q.code);
+  }
+} 
+console.log("📊 Score actuel : " + score + " / " + counter);
