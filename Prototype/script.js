@@ -1,26 +1,11 @@
-function OccurenceNum() {
-    let list = ["c1", "c2", "c1", "c3", "c4", "c4", "c1", "c3", "c1"];
+let numbers = ["c1","c3","c2","c1","c8","c1" ]; //Array
+let choisi = "c1"; //le code choisi a calculer
+let counter = 0;
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] === choisi) {
+        counter++  // ; counter= couter +1
 
-    let nameC = prompt("Enter the code (ex: c1, c2...):");
-
-    if (!nameC) {
-        console.log("You did not enter a code.");
-        return;
-    }
-
-    let counter = 0;
-
-    for (let item of list) {
-        if (item === nameC) {
-            counter++;
-        }
-    }
-
-    if (counter > 0) {
-        console.log(`The number of ${nameC} is ${counter}`);
-    } else {
-        console.log(`${nameC} is not in the list`);
     }
 }
-
-OccurenceNum();
+console.log("La valeur " + choisi + " apparaît " + counter + " fois.");
+    
